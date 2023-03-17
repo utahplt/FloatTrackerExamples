@@ -4,6 +4,8 @@ Examples for the FloatTracker.jl repository.
 
 # Synopsis
 
+To install the dependencies, open up a Julia REPL and enter the package manager by typing `]`, then run the following:
+
 ```
 pkg> activate .
 pkg> instantiate
@@ -12,10 +14,10 @@ pkg> instantiate
 Once the dependencies are loaded, you can run the examples with e.g.:
 
 ```
-$ julia src/examples/nbody.jl
+$ julia --project=. examples/nbody.jl
 ```
 
-If the FloatTracker.jl source has updated, run:
+If the FloatTracker.jl source has updated, run the following from the package manager:
 
 ```
 pkg> activate .
