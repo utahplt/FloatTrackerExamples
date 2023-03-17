@@ -1,6 +1,6 @@
 # FloatTrackerExamples
 
-Examples for the FloatTracker.jl repository.
+Examples for the [FloatTracker.jl](https://github.com/tcallred/FloatTracker.jl) repository.
 
 # Synopsis
 
@@ -32,17 +32,29 @@ pkg> up
 
 We've created several examples of our library in action, most utilizing existing Julia packages.
 
-### NBody.jl
+### NBodySimulator.jl
 
-TODO
+[NBodySimulator](https://github.com/SciML/NBodySimulator.jl) simulates n-interacting bodies.
+
+```
+$ julia --project=. examples/nbody.jl
+```
 
 ### Finch.jl
 
-TODO
+[Finch](https://github.com/paralab/finch) is a DSL for solving partial differential equations numerically.
+
+```
+$ julia --project=. examples/finch/example-advection2d-fv.jl
+```
 
 ### ShallowWaters.jl
 
-TODO
+[ShallowWaters.jl](https://github.com/milankl/shallowwaters.jl) is a Julia library for simulating a shallow water model. The interesting thing with this project is that the type of float used in the simulation has been parameterized, allowing us to easily inject our `TrackedFloat` type.
+
+```
+$ julia --project=. examples/shallow_waters.jl
+```
 
 # License
 
