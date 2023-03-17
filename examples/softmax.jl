@@ -1,5 +1,4 @@
-include("../src/FloatTracker.jl")
-using .FloatTracker: TrackedFloat64, write_out_logs, set_logger
+using FloatTracker: TrackedFloat64, write_out_logs, set_logger
 
 set_logger(filename="max", buffersize=1)
 

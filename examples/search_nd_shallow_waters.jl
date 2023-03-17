@@ -1,5 +1,4 @@
-include("../src/FloatTracker.jl")
-using .FloatTracker: TrackedFloat16, TrackedFloat32, write_log_to_file, set_inject_nan, set_exclude_stacktrace, set_logger, write_out_logs
+using FloatTracker: TrackedFloat16, TrackedFloat32, write_log_to_file, set_inject_nan, set_exclude_stacktrace, set_logger, write_out_logs
 using ShallowWaters
 
 set_exclude_stacktrace([:prop])

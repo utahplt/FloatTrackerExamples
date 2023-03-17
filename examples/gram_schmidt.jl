@@ -1,6 +1,5 @@
-include("../src/FloatTracker.jl")
 using LinearAlgebra
-using .FloatTracker: TrackedFloat16, write_log_to_file, set_inject_nan, set_logger, set_exclude_stacktrace
+using FloatTracker: TrackedFloat16, write_log_to_file, set_inject_nan, set_logger, set_exclude_stacktrace
 
 set_inject_nan(true)
 set_logger(filename="gram_schmidt", buffersize=5)
