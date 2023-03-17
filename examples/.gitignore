@@ -1,6 +1,5 @@
 *.txt
 .*/
-run*/
 *.dot
 *.gexf
 *.ps
