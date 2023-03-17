@@ -1,4 +1,4 @@
-using FloatTracker: TrackedFloat64, FunctionRef, write_log_to_file, set_inject_nan, set_exclude_stacktrace, set_logger
+using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, set_inject_nan, set_exclude_stacktrace, set_logger
 
 set_logger(filename="nbody_logs", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
 fns = [FunctionRef(:run_simulation, Symbol("nbody_simulation_result.jl"))]
@@ -42,3 +42,5 @@ println("Running simulation...done")
 # using Plots
 # animate(sim_result, "animated_particles.gif")
 # println("Plotting result...done")
+
+write_out_logs()
