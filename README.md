@@ -24,6 +24,20 @@ pkg> activate .
 pkg> up
 ```
 
+You can also add the FloatTracker.jl source as a dev dependency:
+
+```
+pkg> develop FloatTracker.jl
+```
+
+And when you want to switch back to the "normal" version:
+
+```
+pkg> free FloatTracker.jl
+```
+
+See instructions on the [Julia package manager docs](https://pkgdocs.julialang.org/v1/getting-started/#Modifying-A-Dependency).
+
 # Description
 
 [FloatTracker.jl](https://github.com/tcallred/FloatTracker.jl) is a [Julia](https://julialang.org) library for diagnosing floating-point errors. This repository showcases how it can be used.
