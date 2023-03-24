@@ -1,6 +1,6 @@
 # FloatTrackerExamples
 
-Examples for the [FloatTracker.jl](https://github.com/tcallred/FloatTracker.jl) repository.
+Examples for the [FloatTracker.jl](https://github.com/utahplt/FloatTracker.jl) repository.
 
 # Synopsis
 
@@ -40,7 +40,7 @@ See instructions on the [Julia package manager docs](https://pkgdocs.julialang.o
 
 # Description
 
-[FloatTracker.jl](https://github.com/tcallred/FloatTracker.jl) is a [Julia](https://julialang.org) library for diagnosing floating-point errors. This repository showcases how it can be used.
+[FloatTracker.jl](https://github.com/utahplt/FloatTracker.jl) is a [Julia](https://julialang.org) library for diagnosing floating-point errors. This repository showcases how it can be used.
 
 ## Examples
 
