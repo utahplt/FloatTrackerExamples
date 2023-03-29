@@ -2,7 +2,8 @@ using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, set_inject_nan,
 
 set_logger(filename="nbody_logs", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
 fns = [FunctionRef(:run_simulation, Symbol("nbody_simulation_result.jl"))]
-set_inject_nan(true, 10, 1, fns)
+libs = ["NBodySimulator", "OrdinaryDiffEq"]
+set_inject_nan(true, 2, 1, fns, libs)
 # set_exclude_stacktrace([:prop])
 
 println("FloatTracker configured; loading NBodySimulator...")
