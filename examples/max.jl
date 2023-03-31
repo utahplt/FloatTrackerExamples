@@ -26,3 +26,5 @@ println("--- With builtin max ---")
 # res2 = maximum2([1, NaN, 4])
 res2 = maximum2([TrackedFloat16(x) for x in [1, NaN, 4]]).val
 println("Result: $(res2)")
+
+write_out_logs()
