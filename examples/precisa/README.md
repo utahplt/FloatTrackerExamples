@@ -1,5 +1,6 @@
 
 https://github.com/nasa/PRECiSA
+ benchmarks/analysis/*
 
 cd2d
 
@@ -11,9 +12,9 @@ cd2d
 FPBench
 
 - [X] azimuth.pvs
-- [ ] carbonGas.pvs
-- [ ] cpr_yz0.pvs
-- [ ] cubicSpline.pvs
+- [X] carbonGas.pvs
+- [X] cpr_yz0.pvs
+- [X] cubicSpline.pvs
 - [ ] doppler1.pvs
 - [ ] doppler2.pvs
 - [ ] doppler3.pvs
