@@ -15,7 +15,7 @@ FPBench
 - [X] carbonGas.pvs
 - [X] cpr_yz0.pvs
 - [X] cubicSpline.pvs
-- [ ] doppler1.pvs
+- [X] doppler1.pvs
 - [ ] doppler2.pvs
 - [ ] doppler3.pvs
 - [ ] hartman3.pvs
