@@ -5,9 +5,7 @@ set_logger(filename="nbody_logs", buffersize=20, cstg=true, cstgArgs=false, cstg
 fns = [FunctionRef(:run_simulation, Symbol("nbody_simulation_result.jl"))]
 libs = ["NBodySimulator", "OrdinaryDiffEq"]
 inj = make_injector(replay="nbody_recording_202304061343036")
-println("inj: $inj")
 set_inject_nan(inj)
-# set_exclude_stacktrace([:prop])
 
 println("FloatTracker configured; loading NBodySimulator...")
 using NBodySimulator: NullThermostat, MassBody, InfiniteBox, GravitationalSystem, NBodySimulation, run_simulation
