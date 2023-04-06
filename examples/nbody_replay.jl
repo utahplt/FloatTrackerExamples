@@ -1,13 +1,12 @@
 using Dates
-using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, set_inject_nan, set_exclude_stacktrace, set_logger
+using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, set_inject_nan, set_exclude_stacktrace, set_logger, make_injector
 
 set_logger(filename="nbody_logs", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
 fns = [FunctionRef(:run_simulation, Symbol("nbody_simulation_result.jl"))]
 libs = ["NBodySimulator", "OrdinaryDiffEq"]
-now_str = Dates.format(now(), "yyyymmddHHMMss")
-recording_file = "nbody_recording_$now_str"
-println("Recording to $recording_file...")
-set_inject_nan(true, 2, 1, fns, libs, record=recording_file)
+inj = make_injector(replay="nbody_recording_202304061343036")
+println("inj: $inj")
+set_inject_nan(inj)
 # set_exclude_stacktrace([:prop])
 
 println("FloatTracker configured; loading NBodySimulator...")
