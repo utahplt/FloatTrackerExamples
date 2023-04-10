@@ -4,31 +4,20 @@ using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, set_inject_nan,
 set_logger(filename="nbody_logs", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
 fns = [FunctionRef(:run_simulation, Symbol("nbody_simulation_result.jl"))]
 libs = ["NBodySimulator", "OrdinaryDiffEq"]
-inj = make_injector(replay="nbody_recording_202304061343036")
+inj = make_injector(replay="nbody_loop_recording.txt")
 set_inject_nan(inj)
 
 println("FloatTracker configured; loading NBodySimulator...")
 using NBodySimulator: NullThermostat, MassBody, InfiniteBox, GravitationalSystem, NBodySimulation, run_simulation
 using StaticArrays
 
-# body1 = MassBody(SVector(0.0, 1.0, 0.0), SVector(5.775e-6, 0.0, 0.0), 2.0)
-# body2 = MassBody(SVector(0.0, -1.0, 0.0), SVector(-5.775e-6, 0.0, 0.0), 2.0)
-
 println("Configuring massive bodies...")
 body1 = MassBody(SVector(TrackedFloat64(0.0), TrackedFloat64(1.0), TrackedFloat64(0.0)), SVector(TrackedFloat64(5.775e-6), TrackedFloat64(0.0), TrackedFloat64(0.0)), TrackedFloat64(2.0))
 body2 = MassBody(SVector(TrackedFloat64(0.0), TrackedFloat64(-1.0), TrackedFloat64(0.0)), SVector(TrackedFloat64(-5.775e-6), TrackedFloat64(0.0), TrackedFloat64(0.0)), TrackedFloat64(2.0))
 body3 = MassBody(SVector(TrackedFloat64(0.0), TrackedFloat64(-1.0), TrackedFloat64(1.0)), SVector(TrackedFloat64(-5.775e-6), TrackedFloat64(0.0), TrackedFloat64(0.0)), TrackedFloat64(5.0))
 
-# This version is really close to the second body, and it crashes
-# body3 = MassBody(SVector(TrackedFloat64(0.0), TrackedFloat64(-1.0), TrackedFloat64(0.1)), SVector(TrackedFloat64(-5.775e-6), TrackedFloat64(0.0), TrackedFloat64(0.0)), TrackedFloat64(5.0))
-
-# This configuration of the third body (pretty identical to the second body) makes it kill NaNs
-# body3 = MassBody(SVector(TrackedFloat64(0.0), TrackedFloat64(-1.0), TrackedFloat64(0.0)), SVector(TrackedFloat64(-5.775e-6), TrackedFloat64(0.0), TrackedFloat64(0.0)), TrackedFloat64(5.0))
-
 G = 6.673e-11
 system = GravitationalSystem([body1, body2, body3], G)
-
-# tspan = (0.0, 1111150.0)
 
 tspan = (TrackedFloat64(0.0), TrackedFloat64(3000000.0))
 
@@ -39,10 +28,5 @@ simulation = NBodySimulation(system, tspan, InfiniteBox(SVector(TrackedFloat64(-
 println("Running simulation...")
 sim_result = run_simulation(simulation)
 println("Running simulation...done")
-
-# println("Plotting result...")
-# using Plots
-# animate(sim_result, "animated_particles.gif")
-# println("Plotting result...done")
 
 write_out_logs()
