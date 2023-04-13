@@ -5,12 +5,17 @@
 ### If the Finch package has already been added, use this line #########
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 
-include("../../src/FloatTracker.jl")
-using .FloatTracker: TrackedFloat64, write_log_to_file, set_inject_nan, set_logger, set_exclude_stacktrace
-fns = []
-set_inject_nan(false, 1, 1, fns)
-set_logger(filename="tf-advection2d-fv")
+using Dates
+using FloatTracker: TrackedFloat64, write_log_to_file, set_inject_nan, set_logger, set_exclude_stacktrace
+
+set_logger(filename="adv2d", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
+fns = [] ##[FunctionRef(:run_simulation, Symbol("nbody_simulation_result.jl"))]
+libs = [] ##["NBodySimulator", "OrdinaryDiffEq"]
+now_str = Dates.format(now(), "yyyymmddHHMMss")
+recording_file = "adv2d_recording_$now_str"
+println("Recording to $recording_file...")
 set_exclude_stacktrace([:prop])
+set_inject_nan(true, 2, 1, fns, libs, record=recording_file)
 
 ### If not, use these four lines (working from the examples directory) ###
 # if !@isdefined(Finch)
