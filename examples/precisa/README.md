@@ -16,10 +16,10 @@ FPBench
 - [X] cpr_yz0.pvs
 - [X] cubicSpline.pvs
 - [X] doppler1.pvs
-- [ ] doppler2.pvs
-- [ ] doppler3.pvs
-- [ ] hartman3.pvs
-- [ ] hartman6.pvs
+- [-] doppler2.pvs --- same function as 1, added the inputs to that
+- [-] doppler3.pvs --- ditto
+- [X] hartman3.pvs
+- [X] hartman6.pvs
 - [ ] himmilbeau.pvs
 - [ ] jet.pvs
 - [ ] kepler0.pvs
