@@ -2,7 +2,7 @@ using FloatTracker: TrackedFloat64, write_out_logs, set_logger
 using Random
 using Distributions: Uniform
 
-set_logger(filename="doppler1", buffersize=1)
+set_logger(filename="hartman3", buffersize=1)
 
 function tf(x)
   TrackedFloat64(x)

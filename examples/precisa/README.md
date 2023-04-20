@@ -20,11 +20,11 @@ FPBench
 - [-] doppler3.pvs --- ditto
 - [X] hartman3.pvs
 - [X] hartman6.pvs
-- [ ] himmilbeau.pvs
-- [ ] jet.pvs
-- [ ] kepler0.pvs
-- [ ] kepler1.pvs
-- [ ] kepler2.pvs
+- [X] himmilbeau.pvs
+- [X] jet.pvs
+- [X] kepler0.pvs
+- [X] kepler1.pvs
+- [X] kepler2.pvs
 - [ ] logExp.pvs
 - [ ] polycarp.pvs
 - [ ] predPrey.pvs
