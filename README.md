@@ -58,6 +58,15 @@ $ julia --project=. examples/nbody.jl
 
 [Finch](https://github.com/paralab/finch) is a DSL for solving partial differential equations numerically.
 
+Install Finch from its github repo and **NOT**  by name (`Pkg.add("Finch")`), because that way
+leads to [`willow-ahrens/Finch.jl`](https://github.com/willow-ahrens/Finch.jl):
+
+```
+$ julia --project=. -e 'import Pkg; Pkg.add("https://github.com/paralab/Finch.git")'
+```
+
+To run an example:
+
 ```
 $ julia --project=. examples/finch/example-advection2d-fv.jl
 ```
