@@ -3,13 +3,13 @@ using FloatTracker: TrackedFloat16, write_out_logs, set_logger
 set_logger(filename="max", buffersize=1)
 
 function maximum(lst)
-  curr_max = 0.0
+  max_seen = 0.0
   for x in lst
-    if curr_max < x
-      curr_max = x
+    if ! (x <= max_seen)
+      max_seen = x              # swap if new val greater
     end
   end
-  curr_max
+  max_seen
 end
 
 function maximum2(lst)
@@ -18,7 +18,7 @@ end
 
 println("--- With less than ---")
 # res = maximum([1, NaN, 4])
-res = maximum([TrackedFloat16(x) for x in [1, NaN, 4]]).val
+res = maximum([TrackedFloat16(x) for x in [1, 5, 4, NaN, 4]]).val
 println("Result: $(res)")
 println()
 
