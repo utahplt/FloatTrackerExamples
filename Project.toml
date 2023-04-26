@@ -1,7 +1,9 @@
 authors = ["Taylor Allred <taylor.allred21@gmail.com>", "Ashton Wiersdorf <mail@wiersdorf.dev>", "Ben Greenman <benjaminlgreenman@gmail.com>"]
 
 [deps]
+ArgParse = "c7e460c6-2fb9-53a9-8c5b-16f535851c63"
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+Finch = "25dbc9c3-d6a9-4084-a72b-41a6bed6a421"
 FloatTracker = "1722352a-da05-4a89-9ace-0f2f7ef630bb"
 IterativeSolvers = "42fd0dbc-a981-5370-80f2-aaf504508153"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
