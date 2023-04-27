@@ -6,13 +6,13 @@ using Dates
 
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 using FloatTracker:
-    TrackedFloat64, set_exclude_stacktrace, set_inject_nan, set_logger, write_log_to_file
+  TrackedFloat64, set_exclude_stacktrace, set_inject_nan, set_logger, write_log_to_file, make_injector
+
+now_str = Dates.format(now(), "yyyymmddHHMMss")
+default_recording_file = "rand-adv2d-recording_$now_str"
 
 function parse_recording_args()
   aps = ArgParseSettings()
-
-  now_str = Dates.format(now(), "yyyymmddHHMMss")
-  default_recording_file = "rand-adv2d-recording_$now_str"
 
   @add_arg_table! aps begin
     "--record"
@@ -38,21 +38,25 @@ end
 set_exclude_stacktrace([:prop])
 set_logger(filename="inj-adv2d", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
 
+# Control where the functions and libraries go
 fns = []
 libs = []
 
 # Check args to see if we should record or not
 parsed_args = parse_recording_args()
-println("Parsed args:")
-for (arg,val) in parsed_args
-  println("  $arg  =>  $val")
+
+if parsed_args["record"] || parsed_args["recording-file"] != default_recording_file
+  recording_file = parsed_args["recording-file"]
+  println("Recording to $recording_file")
+  set_inject_nan(true, 1000, 1, fns, libs, record=recording_file)
+elseif parsed_args["replay-file"] != ""
+  replay_file = parsed_args["replay-file"]
+  println("Using replay file $replay_file")
+  set_inject_nan(make_injector(replay=replay_file))
+else
+  println("No recording, no replay")
+  set_inject_nan(true, 1000, 1, fns, libs)
 end
-
-# Recording setup
-println("Recording to $recording_file...")
-
-# Injection setup
-set_inject_nan(true, 1000, 1, fns, libs, record=recording_file)
 
 ####################### Finch setup ######################################
 
