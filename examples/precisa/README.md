@@ -25,8 +25,8 @@ FPBench
 - [X] kepler0.pvs
 - [X] kepler1.pvs
 - [X] kepler2.pvs
-- [ ] logExp.pvs
-- [ ] polycarp.pvs
+- [X] logExp.pvs
+- [X] polycarp.pvs
 - [ ] predPrey.pvs
 - [ ] rigidBody1.pvs
 - [ ] rigidBody2.pvs
