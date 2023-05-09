@@ -27,10 +27,10 @@ FPBench
 - [X] kepler2.pvs
 - [X] logExp.pvs
 - [X] polycarp.pvs
-- [ ] predPrey.pvs
-- [ ] rigidBody1.pvs
-- [ ] rigidBody2.pvs
-- [ ] sine.pvs
+- [X] predPrey.pvs
+- [X] rigidBody1.pvs (combined in rigidBody.jl)
+- [X] rigidBody2.pvs (combined in rigidBody.jl)
+- [X] sine.pvs
 - [ ] sineOrder3.pvs
 - [ ] sphere.pvs
 - [ ] sqroot.pvs
