@@ -31,8 +31,8 @@ FPBench
 - [X] rigidBody1.pvs (combined in rigidBody.jl)
 - [X] rigidBody2.pvs (combined in rigidBody.jl)
 - [X] sine.pvs
-- [ ] sineOrder3.pvs
-- [ ] sphere.pvs
+- [X] sineOrder3.pvs
+- [X] sphere.pvs
 - [ ] sqroot.pvs
 - [ ] styblinski.pvs
 - [ ] t_div_t1.pvs
