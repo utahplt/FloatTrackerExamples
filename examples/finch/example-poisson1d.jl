@@ -1,17 +1,3 @@
-# 2023-02-07: runs without TF, error with TF
-# ERROR: LoadError: MethodError: no method matching floatmin(::Type{TrackedFloat64})
-# Closest candidates are:
-#   floatmin() at float.jl:878
-#   floatmin(::T) where T<:AbstractFloat at float.jl:852
-#   floatmin(::Type{ForwardDiff.Dual{T, V, N}}) where {T, V, N} at ~/.julia/packages/ForwardDiff/pDtsf/src/dual.jl:789
-#   ...
-# Stacktrace:
-#   [1] floatmin2(#unused#::Type{TrackedFloat64})
-#     @ LinearAlgebra ~/code/julia/julia-1.8.0/usr/share/julia/stdlib/v1.8/LinearAlgebra/src/givens.jl:67
-#   [2] givensAlgorithm(f::TrackedFloat64, g::TrackedFloat64)
-#     @ LinearAlgebra ~/code/julia/julia-1.8.0/usr/share/julia/stdlib/v1.8/LinearAlgebra/src/givens.jl:82
-#   [...clipped...]
-
 #=
 # 1D Poisson, Dirichlet bc
 # CG, Linear element
@@ -21,8 +7,7 @@
 ### If the Finch package has already been added, use this line #########
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 
-include("../../src/FloatTracker.jl")
-using .FloatTracker: TrackedFloat64, FunctionRef, write_log_to_file, set_inject_nan, set_logger, set_exclude_stacktrace
+using FloatTracker: TrackedFloat64, FunctionRef, write_log_to_file, set_inject_nan, set_logger, set_exclude_stacktrace
 # fns = []
 # TODO why inf loop??!
 fns = [FunctionRef(:mesh, Symbol("finch_interface.jl"))]
