@@ -1,10 +1,13 @@
 using FloatTracker: TrackedFloat16, TrackedFloat32, write_out_logs, set_inject_nan, set_exclude_stacktrace, set_logger
 using ShallowWaters, PyPlot
 
-set_logger(filename="nan_tf", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
+set_logger(filename="nan_tf", buffersize=20, cstg=true, cstgArgs=true, cstgLineNum=true)
 set_exclude_stacktrace([:prop])
 
-P = run_model(T=TrackedFloat32,cfl=10, Ndays=100,nx=100,L_ratio=1,bc="nonperiodic",wind_forcing_x="double_gyre",topography="seamount")
+P = run_model(T=TrackedFloat32,
+              cfl=10, Ndays=100, nx=100, L_ratio=1,
+              bc="nonperiodic", wind_forcing_x="double_gyre",
+              topography="seamount")
 pcolormesh(P.η')
 savefig("height_nan_tf.png")
 
@@ -13,4 +16,3 @@ pcolormesh(speed')
 savefig("speed_nan_tf.png")
 
 write_out_logs()
-
