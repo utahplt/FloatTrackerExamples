@@ -1,8 +1,8 @@
-using FloatTracker: TrackedFloat16, TrackedFloat32, write_out_logs, set_inject_nan, set_exclude_stacktrace, set_logger
+using FloatTracker: TrackedFloat16, TrackedFloat32, write_out_logs, set_exclude_stacktrace!, set_logger_config!
 using ShallowWaters, PyPlot
 
-set_logger(filename="nan_tf", buffersize=20, cstg=true, cstgArgs=true, cstgLineNum=true)
-set_exclude_stacktrace([:prop])
+set_logger_config!(filename="nan_tf", buffersize=20, cstg=true, cstgArgs=true, cstgLineNum=true)
+set_exclude_stacktrace!([:prop])
 
 P = run_model(T=TrackedFloat32,
               cfl=10, Ndays=100, nx=100, L_ratio=1,

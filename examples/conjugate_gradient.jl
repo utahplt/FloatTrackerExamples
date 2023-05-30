@@ -1,12 +1,14 @@
-using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, set_inject_nan, set_logger, set_exclude_stacktrace
+using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, set_injector_config!, set_logger_config!, set_exclude_stacktrace!
 using LinearAlgebra
 using SparseArrays
 using IterativeSolvers
 
+# WARNING: FloatTracker API updates haven't been actually tested in full!
+
 # fns = [FunctionRef(:norm2, Symbol("generic.jl"))]
-# set_inject_nan(true, 10, 1, fns)
-set_logger(filename="cg", cstg=true, cstgArgs=false, cstgLineNum=false)
-# set_exlude_stacktrace([:prop])
+# set_injector_config!(functions=fns)
+set_logger_config!(filename="cg", cstg=true, cstgArgs=false, cstgLineNum=false)
+# set_exlude_stacktrace!([:prop])
 
 A = sparse([Float64(1), Float64(1), Float64(2), Float64(3)],
            [Float64(1), Float64(3), Float64(2), Float64(3)],
@@ -17,8 +19,8 @@ B = [TrackedFloat64(1e-300), TrackedFloat64(3e-300), TrackedFloat64(1e-300)]
 # B = [TrackedFloat64(2), TrackedFloat64(5), TrackedFloat64(1.5)]
 
 
-# A = sparse([1.0,1.0,2.0,3.0], 
-#            [1.0,3.0,2.0,3.0], 
+# A = sparse([1.0,1.0,2.0,3.0],
+#            [1.0,3.0,2.0,3.0],
 #            [0.0,1.0,2.0,0.0]
 #         )
 #
