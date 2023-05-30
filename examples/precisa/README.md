@@ -33,11 +33,11 @@ FPBench
 - [X] sine.pvs
 - [X] sineOrder3.pvs
 - [X] sphere.pvs
-- [ ] sqroot.pvs
-- [ ] styblinski.pvs
-- [ ] t_div_t1.pvs
+- [X] sqroot.pvs
+- [X] styblinski.pvs
+- [X] t_div_t1.pvs
 - [ ] turbine1.pvs
 - [ ] turbine2.pvs
 - [ ] turbine3.pvs
-- [ ] verhulst.pvs
+- [X] verhulst.pvs
 
