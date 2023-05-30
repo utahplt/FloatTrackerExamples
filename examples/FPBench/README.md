@@ -1,15 +1,7 @@
 
-https://github.com/nasa/PRECiSA
- benchmarks/analysis/*
 
-cd2d
-
-- [ ] cd2d_double.pvs
-- [ ] cd2d_tauB_double.pvs
-- [ ] cd2d_tau_double.pvs
-- [ ] tcoa_fp.pvs
-
-FPBench
+FPBench programs from PRECiSA repo:
+  <https://github.com/nasa/PRECiSA/benchmarks/analysis/FPBench>
 
 - [X] azimuth.pvs
 - [X] carbonGas.pvs
@@ -36,8 +28,8 @@ FPBench
 - [X] sqroot.pvs
 - [X] styblinski.pvs
 - [X] t_div_t1.pvs
-- [ ] turbine1.pvs
-- [ ] turbine2.pvs
-- [ ] turbine3.pvs
+- [X] turbine1.pvs
+- [X] turbine2.pvs -- fairly different than t2,t3
+- [X] turbine3.pvs
 - [X] verhulst.pvs
 
