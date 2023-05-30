@@ -1,9 +1,9 @@
 using LinearAlgebra
-using FloatTracker: TrackedFloat16, write_log_to_file, set_inject_nan, set_logger, set_exclude_stacktrace
+using FloatTracker: TrackedFloat16, write_log_to_file, enable_nan_injection!, set_logger_config!, set_exclude_stacktrace!
 
-set_inject_nan(true)
-set_logger(filename="gram_schmidt", buffersize=5)
-set_exclude_stacktrace([:prop])
+enable_nan_injection!()
+set_logger_config!(filename="gram_schmidt", buffersize=5)
+set_exclude_stacktrace!([:prop])
 
 gs_cofficient(v1, v2) = dot(v2, v1) / dot(v1, v1)
 
@@ -14,7 +14,7 @@ proj(v1, v2) = multiply(gs_cofficient(v1, v2), v1)
 function gs(X)
   Y = []
   for v in X
-    temp_vec = v 
+    temp_vec = v
     for inY in Y
       proj_vec = proj(inY, v)
       temp_vec = map((x, y) -> x - y, temp_vec, proj_vec)

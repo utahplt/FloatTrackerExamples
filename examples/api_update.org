@@ -1,0 +1,55 @@
+#+title: API Update TODO list
+
+This is to track updates to the new FloatTracker API
+
+* Files to update [16/43]
+
+ - [X] conjugate_gradient.jl
+ - [X] gram_schmidt.jl
+ - [X] max.jl
+ - [X] nbody.jl
+ - [X] nbody_replay.jl
+ - [X] playground.jl
+ - [X] search_nd_shallow_waters.jl
+ - [X] shallow_waters.jl
+ - [X] softmax.jl
+ - [X] sw_nan_notf.jl
+ - [X] sw_nan_tf.jl
+ - [X] sw_nonan_notf.jl
+ - [X] sw_nonan_tf.jl
+ - [X] sw_pretty_nan_notf.jl
+ - [X] sw_pretty_nan_tf.jl
+ - [X] sw_pretty_nonan_notf.jl
+
+Finch:
+
+ - [ ] example-addiff1d-indexed.jl
+ - [ ] example-advection1d-fv.jl
+ - [ ] example-advection2d-fv.jl
+ - [ ] example-elasticity.jl
+ - [ ] example-heat2d.jl
+ - [ ] example-poisson1d.jl
+ - [ ] example-unstructured2d.jl
+ - [ ] injection_investigator.jl
+
+Precisa:
+
+ - [ ] azimuth.jl
+ - [ ] carbonGas.jl
+ - [ ] cpr_yz0.jl
+ - [ ] cubicSpline.jl
+ - [ ] doppler1.jl
+ - [ ] hartman3.jl
+ - [ ] hartman6.jl
+ - [ ] himmilbeau.jl
+ - [ ] jet.jl
+ - [ ] kepler0.jl
+ - [ ] kepler1.jl
+ - [ ] kepler2.jl
+ - [ ] logExp.jl
+ - [ ] polycarp.jl
+ - [ ] predPrey.jl
+ - [ ] rigidBody.jl
+ - [ ] sine.jl
+ - [ ] sineOrder3.jl
+ - [ ] sphere.jl

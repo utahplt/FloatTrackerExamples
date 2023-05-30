@@ -2,13 +2,10 @@
 #  $  julia --project=. examples/nbody_replay.jl
 
 using Dates
-using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, set_inject_nan, set_exclude_stacktrace, set_logger, make_injector
+using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, set_logger_config!, set_injection_replay!
 
-set_logger(filename="nbody_logs", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
-fns = [FunctionRef(:run_simulation, Symbol("nbody_simulation_result.jl"))]
-libs = ["NBodySimulator", "OrdinaryDiffEq"]
-inj = make_injector(replay="nbody_loop_recording.txt")
-set_inject_nan(inj)
+set_logger_config!(filename="nbody_logs", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
+set_injection_replay!("nbody_loop_recording.txt")
 
 println("FloatTracker configured; loading NBodySimulator...")
 using NBodySimulator: NullThermostat, MassBody, InfiniteBox, GravitationalSystem, NBodySimulation, run_simulation

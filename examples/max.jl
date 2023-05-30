@@ -1,6 +1,7 @@
-using FloatTracker: TrackedFloat16, write_out_logs, set_logger
+using FloatTracker: TrackedFloat16, write_out_logs, set_logger_config!, ft_init
 
-set_logger(filename="max", buffersize=1)
+ft_init()
+set_logger_config!(filename="max", buffersize=1)
 
 function maximum(lst)
   max_seen = 0.0
@@ -17,13 +18,11 @@ function maximum2(lst)
 end
 
 println("--- With less than ---")
-# res = maximum([1, NaN, 4])
 res = maximum([TrackedFloat16(x) for x in [1, 5, 4, NaN, 4]]).val
 println("Result: $(res)")
 println()
 
 println("--- With builtin max ---")
-# res2 = maximum2([1, NaN, 4])
 res2 = maximum2([TrackedFloat16(x) for x in [1, NaN, 4]]).val
 println("Result: $(res2)")
 

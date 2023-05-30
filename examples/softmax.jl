@@ -1,6 +1,6 @@
-using FloatTracker: TrackedFloat64, write_out_logs, set_logger
+using FloatTracker: TrackedFloat64, write_out_logs, set_logger_config!
 
-set_logger(filename="max", buffersize=1)
+set_logger_config!(filename="max", buffersize=1)
 
 # Example from
 #   DeepStability: A Study of Unstable Numerical Methods and Their
@@ -22,10 +22,10 @@ end
 function softmax_unstable(x)
   sum = 0
   result = similar(x)
-  for i in length(x)
+  for i in 1:length(x)
     sum += exp(x[i])
   end
-  for j in length(x)
+  for j in 1:length(x)
     result[j] = exp(x[j]) / sum
   end
   return result
@@ -35,10 +35,10 @@ function softmax_stable(x)
   sum = 0
   result = similar(x)
   max = maximum(x)
-  for i in length(x)
+  for i in 1:length(x)
     sum += exp(x[i] - max)
   end
-  for j in length(x)
+  for j in 1:length(x)
     result[j] = exp(x[j] - max) / sum
   end
   return result
