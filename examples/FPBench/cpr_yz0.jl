@@ -1,8 +1,8 @@
-using FloatTracker: TrackedFloat64, write_out_logs, set_logger
+using FloatTracker: TrackedFloat64, write_out_logs, set_logger_config!
 using Random
 using Distributions: Uniform
 
-set_logger(filename="cpr_yz0", buffersize=1)
+set_logger_config!(filename="cpr_yz0", buffersize=1)
 
 function tf(x)
   TrackedFloat64(x)

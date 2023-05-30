@@ -1,8 +1,9 @@
 #+title: API Update TODO list
+#+startup: showall
 
 This is to track updates to the new FloatTracker API
 
-* Files to update [16/43]
+* Files to update [43/43]
 
  - [X] conjugate_gradient.jl
  - [X] gram_schmidt.jl
@@ -23,33 +24,33 @@ This is to track updates to the new FloatTracker API
 
 Finch:
 
- - [ ] example-addiff1d-indexed.jl
- - [ ] example-advection1d-fv.jl
- - [ ] example-advection2d-fv.jl
- - [ ] example-elasticity.jl
- - [ ] example-heat2d.jl
- - [ ] example-poisson1d.jl
- - [ ] example-unstructured2d.jl
- - [ ] injection_investigator.jl
+ - [X] example-addiff1d-indexed.jl
+ - [X] example-advection1d-fv.jl
+ - [X] example-advection2d-fv.jl
+ - [X] example-elasticity.jl
+ - [X] example-heat2d.jl
+ - [X] example-poisson1d.jl
+ - [X] example-unstructured2d.jl
+ - [X] injection_investigator.jl
 
 Precisa:
 
- - [ ] azimuth.jl
- - [ ] carbonGas.jl
- - [ ] cpr_yz0.jl
- - [ ] cubicSpline.jl
- - [ ] doppler1.jl
- - [ ] hartman3.jl
- - [ ] hartman6.jl
- - [ ] himmilbeau.jl
- - [ ] jet.jl
- - [ ] kepler0.jl
- - [ ] kepler1.jl
- - [ ] kepler2.jl
- - [ ] logExp.jl
- - [ ] polycarp.jl
- - [ ] predPrey.jl
- - [ ] rigidBody.jl
- - [ ] sine.jl
- - [ ] sineOrder3.jl
- - [ ] sphere.jl
+ - [X] azimuth.jl
+ - [X] carbonGas.jl
+ - [X] cpr_yz0.jl
+ - [X] cubicSpline.jl
+ - [X] doppler1.jl
+ - [X] hartman3.jl
+ - [X] hartman6.jl
+ - [X] himmilbeau.jl
+ - [X] jet.jl
+ - [X] kepler0.jl
+ - [X] kepler1.jl
+ - [X] kepler2.jl
+ - [X] logExp.jl
+ - [X] polycarp.jl
+ - [X] predPrey.jl
+ - [X] rigidBody.jl
+ - [X] sine.jl
+ - [X] sineOrder3.jl
+ - [X] sphere.jl

@@ -6,16 +6,17 @@
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 
 using Dates
-using FloatTracker: TrackedFloat64, write_log_to_file, set_inject_nan, set_logger, set_exclude_stacktrace
+using FloatTracker: TrackedFloat64, write_log_to_file, set_injector_config!, set_logger_config!, set_exclude_stacktrace!, enable_injection_recording!
 
-set_logger(filename="adv2d", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
+set_logger_config!(filename="adv2d", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
 fns = [] ##[FunctionRef(:run_simulation, Symbol("nbody_simulation_result.jl"))]
 libs = [] ##["NBodySimulator", "OrdinaryDiffEq"]
 now_str = Dates.format(now(), "yyyymmddHHMMss")
 recording_file = "adv2d_recording_$now_str"
 println("Recording to $recording_file...")
-set_exclude_stacktrace([:prop])
-set_inject_nan(true, 2, 1, fns, libs, record=recording_file)
+set_exclude_stacktrace!([:prop])
+set_injector_config!(odds=2, 1, functions=fns, libraries=libs)
+enable_injection_recording!(recording_file)
 
 ### If not, use these four lines (working from the examples directory) ###
 # if !@isdefined(Finch)
