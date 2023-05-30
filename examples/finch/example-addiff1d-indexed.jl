@@ -9,13 +9,12 @@
 ### If the Finch package has already been added, use this line #########
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 
-include("../../src/FloatTracker.jl")
-using .FloatTracker: TrackedFloat64, FunctionRef, write_log_to_file, set_inject_nan, set_logger, set_exclude_stacktrace
+using FloatTracker: TrackedFloat64, FunctionRef, write_log_to_file, set_injector_config!, set_logger_config!, set_exclude_stacktrace!
 fns = []
 #fns = [FunctionRef(:mesh, Symbol("finch_interface.jl"))]
-set_inject_nan(false, 1, 1, fns)
-set_logger(filename="tf-addiff1d-indexed")
-set_exclude_stacktrace([:prop])
+set_injector_config!(should_inject=false, odds=1, n_inject=1, functions=fns)
+set_logger_config!(filename="tf-addiff1d-indexed")
+set_exclude_stacktrace!([:prop])
 
 ### If not, use these four lines (working from the examples directory) ###
 # if !@isdefined(Finch)
