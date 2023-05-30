@@ -9,7 +9,7 @@ function tf(x)
 end
 
 function azimuth(lat1, lon1, lat2, lon2)
-  dlon = NaN # lon2 - lon1
+  dlon = lon2 - lon1
   y = cos(lat2) * sin(dlon)
   x = (cos(lat1) * sin(lat2)) - (sin(lat1) * (cos(lat2) * cos(dlon)))
   atan(y / x)
