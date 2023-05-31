@@ -1,7 +1,7 @@
-using FloatTracker: TrackedFloat16, TrackedFloat32, write_out_logs, set_exclude_stacktrace!, set_logger_config!
+using FloatTracker: TrackedFloat16, TrackedFloat32, write_out_logs, set_exclude_stacktrace!, config_logger!
 using ShallowWaters, PyPlot
 
-set_logger_config!(filename="nonan_tf", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
+config_logger!(filename="nonan_tf", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
 set_exclude_stacktrace!([:prop])
 
 P = run_model(T=TrackedFloat32, Ndays=100,nx=100,L_ratio=1,bc="nonperiodic",wind_forcing_x="double_gyre",topography="seamount")
