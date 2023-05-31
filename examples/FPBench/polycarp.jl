@@ -1,9 +1,9 @@
 
-using FloatTracker: TrackedFloat64, write_out_logs, set_logger_config!
+using FloatTracker: TrackedFloat64, write_out_logs, config_logger!
 using Random
 using Distributions: Uniform
 
-set_logger_config!(filename="logExp", buffersize=1)
+config_logger!(filename="logExp", buffersize=1)
 
 function tf(x)
   TrackedFloat64(x)

@@ -5,10 +5,10 @@
 ### If the Finch package has already been added, use this line #########
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 
-using FloatTracker: TrackedFloat64, write_log_to_file, set_injector_config!, set_logger_config!, set_exclude_stacktrace!
+using FloatTracker: TrackedFloat64, write_log_to_file, config_injector!, config_logger!, set_exclude_stacktrace!
 fns = []
-set_injector_config!(should_inject=true, odds=1, n_inject=1, functions=fns)
-set_logger_config!("tf-unstructured", 5)
+config_injector!(should_inject=true, odds=1, n_inject=1, functions=fns)
+config_logger!("tf-unstructured", 5)
 set_exclude_stacktrace!([:prop])
 
 ### If not, use these four lines (working from the examples directory) ###
