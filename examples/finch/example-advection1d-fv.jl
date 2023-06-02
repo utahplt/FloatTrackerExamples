@@ -5,11 +5,11 @@
 ### If the Finch package has already been added, use this line #########
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 
-using FloatTracker: TrackedFloat64, write_log_to_file, config_injector!, config_logger!, set_exclude_stacktrace!
-fns = []
-config_injector!(should_inject=false, odds=1, n_inject=1, functions=fns)
-config_logger!(filename="tf-advection1d-fv")
-set_exclude_stacktrace!([:prop])
+using FloatTracker: TrackedFloat64, write_out_logs, config_injector, config_logger, exclude_stacktrace, FunctionRef
+fns = FunctionRef[]
+config_injector(active=false, odds=1, n_inject=1, functions=fns)
+config_logger(filename="tf-advection1d-fv")
+exclude_stacktrace([:prop])
 
 ### If not, use these four lines (working from the examples directory) ###
 # if !@isdefined(Finch)
@@ -89,5 +89,5 @@ finalizeFinch()
 # pyplot();
 # display(plot([x x x x], [exact u.values[:] v.values[:] w.values[:]], markershape=:circle, label=["exact u" "u" "v" "w"]))
 
-write_log_to_file()
+write_out_logs()
 

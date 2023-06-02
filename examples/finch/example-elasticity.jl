@@ -7,11 +7,11 @@
 ### If the Finch package has already been added, use this line #########
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 
-using FloatTracker: TrackedFloat64, write_log_to_file, config_injector!, config_logger!, set_exclude_stacktrace!
+using FloatTracker: TrackedFloat64, write_out_logs, config_injector, config_logger, exclude_stacktrace
 fns = []
-config_injector!(should_inject=false, odds=1, n_inject=1, functions=fns)
-config_logger!(filename="tf-elasticity")
-set_exclude_stacktrace!([:prop])
+config_injector(active=false, odds=1, n_inject=1, functions=fns)
+config_logger(filename="tf-elasticity")
+exclude_stacktrace([:prop])
 
 ### If not, use these four lines (working from the examples directory) ###
 # if !@isdefined(Finch)
@@ -68,4 +68,4 @@ finalizeFinch() # Finish writing and close any files
 
 #println("u_z at end "*string(maximum(u.values[3,Finch.grid_data.bdry[2][3]])));
 
-write_log_to_file()
+write_out_logs()

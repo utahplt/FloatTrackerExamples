@@ -1,5 +1,5 @@
 include("../src/FloatTracker.jl")
-using .FloatTracker: TrackedFloat64, write_log_to_file
+using .FloatTracker: TrackedFloat64, write_out_logs
 using LinearAlgebra
 
 # from Demmel section 2.3.3
@@ -14,7 +14,7 @@ tA = 'N' # transpose? N = no, T = yes, C = yes and conjugate
 dA = 'U' # N = read, U = ignored
 
 println(LinearAlgebra.BLAS.trsv(ul, tA, dA, A, b))
-write_log_to_file()
+write_out_logs()
 
 # Juila gets it right with [NaN, NaN]
 

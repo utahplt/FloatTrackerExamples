@@ -6,7 +6,7 @@ using Dates
 
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 using FloatTracker:
-  TrackedFloat64, set_exclude_stacktrace!, config_injector!, config_logger!, write_log_to_file, enable_injection_recording!, set_injection_replay!
+  TrackedFloat64, exclude_stacktrace, config_injector, config_logger, write_out_logs, record_injection, replay_injection
 
 now_str = Dates.format(now(), "yyyymmddHHMMss")
 default_recording_file = "rand-adv2d-recording_$now_str"
@@ -35,8 +35,8 @@ end
 
 ####################### FloatTracker configuration ######################
 
-set_exclude_stacktrace!([:prop])
-config_logger!(filename="inj-adv2d", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
+exclude_stacktrace([:prop])
+config_logger(filename="inj-adv2d", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
 
 # Control where the functions and libraries go
 fns = []
@@ -48,15 +48,15 @@ parsed_args = parse_recording_args()
 if parsed_args["record"] || parsed_args["recording-file"] != default_recording_file
   recording_file = parsed_args["recording-file"]
   println("Recording to $recording_file")
-  config_injector!(odds=1000, n_inject=1, functions=fns, libraries=libs)
-  enable_injection_recording!(recording_file)
+  config_injector(odds=1000, n_inject=1, functions=fns, libraries=libs)
+  record_injection(recording_file)
 elseif parsed_args["replay-file"] != ""
   replay_file = parsed_args["replay-file"]
   println("Using replay file $replay_file")
   set_injection_replay!(replay_file)
 else
   println("No recording, no replay")
-  config_injector!(odds=1000, functions=fns, libraries=libs)
+  config_injector(odds=1000, functions=fns, libraries=libs)
 end
 
 ####################### Finch setup ######################################
@@ -101,4 +101,4 @@ println("Solving...done")
 
 finalizeFinch()
 
-write_log_to_file()
+write_out_logs()

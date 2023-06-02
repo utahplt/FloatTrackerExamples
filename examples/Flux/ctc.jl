@@ -58,4 +58,4 @@ end
   @test g ≈ ghat rtol=1e-5 atol=1e-5
 end
 
-write_log_to_file()
+write_out_logs()

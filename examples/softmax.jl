@@ -1,6 +1,6 @@
-using FloatTracker: TrackedFloat64, write_out_logs, config_logger!
+using FloatTracker: TrackedFloat64, write_out_logs, config_logger
 
-config_logger!(filename="max", buffersize=1)
+config_logger(filename="max", buffersize=1)
 
 # Example from
 #   DeepStability: A Study of Unstable Numerical Methods and Their

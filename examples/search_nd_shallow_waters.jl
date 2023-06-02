@@ -1,7 +1,7 @@
-using FloatTracker: TrackedFloat16, TrackedFloat32, write_log_to_file, set_exclude_stacktrace!, config_logger!, write_out_logs
+using FloatTracker: TrackedFloat16, TrackedFloat32, write_out_logs, exclude_stacktrace, config_logger, write_out_logs
 using ShallowWaters
 
-set_exclude_stacktrace!([:prop])
+exclude_stacktrace([:prop])
 
 for search_id = 0:20
   run1_goodp = true
@@ -9,7 +9,7 @@ for search_id = 0:20
   run3_goodp = true
   run4_goodp = true
 
-  run1_name = config_logger!(filename="ndsh_id$search_id", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
+  run1_name = config_logger(filename="ndsh_id$search_id", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
   println("Search $search_id; try 1; $run1_name")
   try
     P = run_model(T=TrackedFloat32, Tprog=TrackedFloat32, Tcomm=TrackedFloat32, Tini=TrackedFloat16,Ndays=2,nx=100,L_ratio=0.5,bc="nonperiodic",wind_forcing_x="double_gyre",topography="seamount", scale_sst=2^18, time_scheme="RK", output=1, cfl=search_id );
@@ -18,7 +18,7 @@ for search_id = 0:20
   end
   write_out_logs()
 
-  run2_name = config_logger!(filename="ndsh_id$search_id", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
+  run2_name = config_logger(filename="ndsh_id$search_id", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
   println("Search $search_id; try 2; run2_name")
   try
     P = run_model(T=TrackedFloat32, Tprog=TrackedFloat32, Tcomm=TrackedFloat32, Tini=TrackedFloat16,Ndays=2,nx=100,L_ratio=0.5,bc="nonperiodic",wind_forcing_x="double_gyre",topography="seamount", scale_sst=2^18, time_scheme="RK", output=1, cfl=search_id );
@@ -27,7 +27,7 @@ for search_id = 0:20
   end
   write_out_logs()
 
-  run3_name = config_logger!(filename="ndsh_id$search_id", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
+  run3_name = config_logger(filename="ndsh_id$search_id", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
   println("Search $search_id; try 3; $run3_name")
   try
     P = run_model(T=TrackedFloat32, Tprog=TrackedFloat32, Tcomm=TrackedFloat32, Tini=TrackedFloat16,Ndays=2,nx=100,L_ratio=0.5,bc="nonperiodic",wind_forcing_x="double_gyre",topography="seamount", scale_sst=2^18, time_scheme="RK", output=1, cfl=search_id );
@@ -36,7 +36,7 @@ for search_id = 0:20
   end
   write_out_logs()
 
-  run4_name = config_logger!(filename="ndsh_id$search_id", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
+  run4_name = config_logger(filename="ndsh_id$search_id", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
   println("Search $search_id; try 4; $run4_name")
   try
     P = run_model(T=TrackedFloat32, Tprog=TrackedFloat32, Tcomm=TrackedFloat32, Tini=TrackedFloat16,Ndays=2,nx=100,L_ratio=0.5,bc="nonperiodic",wind_forcing_x="double_gyre",topography="seamount", scale_sst=2^18, time_scheme="RK", output=1, cfl=search_id );

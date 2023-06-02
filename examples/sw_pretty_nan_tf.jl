@@ -1,11 +1,11 @@
-using FloatTracker: TrackedFloat16, TrackedFloat32, write_out_logs, set_exclude_stacktrace!, config_logger!
+using FloatTracker: TrackedFloat16, TrackedFloat32, write_out_logs, exclude_stacktrace, config_logger
 using ShallowWaters, PyPlot
 
 # Dialing the logger high has some inpact too
-config_logger!(filename="pretty_nan_tf", buffersize=100000, cstg=true, cstgArgs=true, cstgLineNum=true)
+config_logger(filename="pretty_nan_tf", buffersize=100000, cstg=true, cstgArgs=true, cstgLineNum=true)
 # set_exclude_stacktrace([:prop,:kill,:gen])
 # Props and kills take the lion share of the perf hit
-set_exclude_stacktrace!([:prop,:kill])
+exclude_stacktrace([:prop,:kill])
 
 P = run_model(T=TrackedFloat32,
               nx=100, L_ratio=1, bc="nonperiodic", wind_forcing_x="double_gyre",

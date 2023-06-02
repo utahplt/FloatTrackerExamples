@@ -1,14 +1,14 @@
 using Dates
-using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, config_injector!, set_exclude_stacktrace!, config_logger!, enable_injection_recording!
+using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, config_injector, exclude_stacktrace, config_logger, record_injection
 
-config_logger!(filename="nbody_logs", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
+config_logger(filename="nbody_logs", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
 fns = [FunctionRef(:run_simulation, Symbol("nbody_simulation_result.jl"))]
 libs = ["NBodySimulator", "OrdinaryDiffEq"]
 now_str = Dates.format(now(), "yyyymmddHHMMss")
 recording_file = "nbody_recording_$now_str"
 println("Recording to $recording_file...")
-config_injector!(odds=2, functions=fns, libraries=libs)
-enable_injection_recording!(recording_file)
+config_injector(odds=2, functions=fns, libraries=libs)
+record_injection(recording_file)
 
 # set_exclude_stacktrace([:prop])
 

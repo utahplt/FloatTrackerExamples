@@ -7,12 +7,12 @@
 ### If the Finch package has already been added, use this line #########
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 
-using FloatTracker: TrackedFloat64, FunctionRef, write_log_to_file, config_injector!, config_logger!, set_exclude_stacktrace!
-fns = []
+using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, config_injector, config_logger, exclude_stacktrace
+fns = FunctionRef[]
 #fns = [FunctionRef(:mesh, Symbol("finch_interface.jl"))]
-config_injector!(should_inject=false, odds=1, n_inject=1, functions=fns)
-config_logger!(filename="tf-poisson")
-set_exclude_stacktrace!([:prop])
+config_injector(active=false, odds=1, n_inject=1, functions=fns)
+config_logger(filename="tf-poisson")
+exclude_stacktrace([:prop])
 
 ### If not, use these four lines (working from the examples directory) ###
 # if !@isdefined(Finch)
@@ -64,4 +64,4 @@ finalizeFinch()
 ## pyplot();
 ## display(plot(Finch.grid_data.allnodes[:], u.values[:], markershape=:circle, legend=false))
 
-write_log_to_file()
+write_out_logs()

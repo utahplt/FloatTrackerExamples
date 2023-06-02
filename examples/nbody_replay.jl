@@ -2,9 +2,9 @@
 #  $  julia --project=. examples/nbody_replay.jl
 
 using Dates
-using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, config_logger!, set_injection_replay!
+using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, config_logger, set_injection_replay!
 
-config_logger!(filename="nbody_logs", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
+config_logger(filename="nbody_logs", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
 set_injection_replay!("nbody_loop_recording.txt")
 
 println("FloatTracker configured; loading NBodySimulator...")

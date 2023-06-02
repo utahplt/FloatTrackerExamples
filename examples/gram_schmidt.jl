@@ -1,9 +1,9 @@
 using LinearAlgebra
-using FloatTracker: TrackedFloat16, write_log_to_file, enable_nan_injection!, config_logger!, set_exclude_stacktrace!
+using FloatTracker: TrackedFloat16, write_out_logs, enable_nan_injection, config_logger, exclude_stacktrace
 
-enable_nan_injection!()
-config_logger!(filename="gram_schmidt", buffersize=5)
-set_exclude_stacktrace!([:prop])
+enable_nan_injection()
+config_logger(filename="gram_schmidt", buffersize=5)
+exclude_stacktrace([:prop])
 
 gs_cofficient(v1, v2) = dot(v2, v1) / dot(v1, v1)
 
@@ -48,4 +48,4 @@ println(gs(tr_test))
 #   end
 # end
 
-write_log_to_file()
+write_out_logs()

@@ -1,7 +1,7 @@
-using FloatTracker: TrackedFloat16, write_out_logs, config_logger!, ft_init
+using FloatTracker: TrackedFloat16, write_out_logs, config_logger, ft_init
 
 ft_init()
-config_logger!(filename="max", buffersize=1)
+config_logger(filename="max", buffersize=1)
 
 function maximum(lst)
   max_seen = 0.0

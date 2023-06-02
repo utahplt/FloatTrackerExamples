@@ -1,5 +1,5 @@
 include("../../src/FloatTracker.jl")
-using .FloatTracker: TrackedFloat64, write_log_to_file
+using .FloatTracker: TrackedFloat64, write_out_logs
 using LinearAlgebra
 
 # from Demmel section 2.4.1
@@ -16,5 +16,5 @@ dA = 'U' # N = read, U = ignored
 
 # UHOH what to do
 println(LinearAlgebra.BLAS.trsv(ul, tA, dA, A, b))
-#write_log_to_file()
+#write_out_logs()
 

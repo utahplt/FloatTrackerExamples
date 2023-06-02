@@ -1,4 +1,4 @@
-using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, config_injector!, config_logger!, set_exclude_stacktrace!
+using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, config_injector, config_logger, exclude_stacktrace
 using LinearAlgebra
 using SparseArrays
 using IterativeSolvers
@@ -6,8 +6,8 @@ using IterativeSolvers
 # WARNING: FloatTracker API updates haven't been actually tested in full!
 
 # fns = [FunctionRef(:norm2, Symbol("generic.jl"))]
-# config_injector!(functions=fns)
-config_logger!(filename="cg", cstg=true, cstgArgs=false, cstgLineNum=false)
+# config_injector(functions=fns)
+config_logger(filename="cg", cstg=true, cstgArgs=false, cstgLineNum=false)
 # set_exlude_stacktrace!([:prop])
 
 A = sparse([Float64(1), Float64(1), Float64(2), Float64(3)],

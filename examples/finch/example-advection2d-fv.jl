@@ -6,17 +6,17 @@
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 
 using Dates
-using FloatTracker: TrackedFloat64, write_log_to_file, config_injector!, config_logger!, set_exclude_stacktrace!, enable_injection_recording!, FunctionRef
+using FloatTracker: TrackedFloat64, write_out_logs, config_injector, config_logger, exclude_stacktrace, record_injection, FunctionRef
 
-config_logger!(filename="adv2d", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
+config_logger(filename="adv2d", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
 fns::Array{FunctionRef} = [] ##[FunctionRef(:run_simulation, Symbol("nbody_simulation_result.jl"))]
 libs::Array{String} = [] ##["NBodySimulator", "OrdinaryDiffEq"]
 now_str = Dates.format(now(), "yyyymmddHHMMss")
 recording_file = "adv2d_recording_$now_str"
 println("Recording to $recording_file...")
-set_exclude_stacktrace!([:prop])
-config_injector!(odds=2, n_inject=1, functions=fns, libraries=libs)
-enable_injection_recording!(recording_file)
+exclude_stacktrace([:prop])
+config_injector(odds=2, n_inject=1, functions=fns, libraries=libs)
+record_injection(recording_file)
 
 ### If not, use these four lines (working from the examples directory) ###
 # if !@isdefined(Finch)
@@ -92,4 +92,4 @@ finalizeFinch()
 ## pyplot();
 ## display(plot(xy[1,:], xy[2,:], u.values[:], st=:surface))
 
-write_log_to_file()
+write_out_logs()
