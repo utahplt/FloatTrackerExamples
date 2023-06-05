@@ -1,41 +1,41 @@
-- [ ] https://github.com/FluxML/Zygote.jl/issues/1036
-- [ ] https://github.com/JuliaSIMD/Polyester.jl/issues/32
-- [ ] https://github.com/pohlan/SheetModel.jl/issues/9
-- [ ] https://github.com/PainterQubits/Unitful.jl/issues/463
-- [ ] https://github.com/JuliaPlots/Plots.jl/issues/3633
+- [ ] https://github.com/FluxML/Zygote.jl/issues/1036 ← maybe, unlikely
+- [ ] https://github.com/JuliaSIMD/Polyester.jl/issues/32 ← maybe, parallelism
+- [X] https://github.com/pohlan/SheetModel.jl/issues/9
+- [ ] https://github.com/PainterQubits/Unitful.jl/issues/463 ← maybe
+- [X] https://github.com/JuliaPlots/Plots.jl/issues/3633
 - [X] https://github.com/ZIB-IOL/FrankWolfe.jl/issues/212
 - [ ] https://github.com/SciML/Optimization.jl/issues/146
-- [ ] https://github.com/JuliaDiff/DiffRules.jl/issues/62
-- [ ] https://github.com/FluxML/Zygote.jl/issues/1015
-- [ ] https://github.com/MakieOrg/Makie.jl/issues/1093
-- [ ] https://github.com/JuliaLang/julia/issues/47902
-- [ ] https://github.com/JuliaLang/julia/issues/47892
-- [ ] https://github.com/MakieOrg/Makie.jl/issues/2493
-- [ ] https://github.com/eohne/YFinance.jl/issues/2
-- [ ] https://github.com/JuliaLang/julia/issues/47860
-- [ ] https://github.com/NREL-Sienna/SIIP-Tutorial/issues/7
-- [ ] https://github.com/JuliaMath/Bessels.jl/issues/74
+- [X] https://github.com/JuliaDiff/DiffRules.jl/issues/62
+- [X] https://github.com/FluxML/Zygote.jl/issues/1015
+- [ ] https://github.com/MakieOrg/Makie.jl/issues/1093 ← maybe
+- [X] https://github.com/JuliaLang/julia/issues/47902
+- [X] https://github.com/JuliaLang/julia/issues/47892
+- [X] https://github.com/MakieOrg/Makie.jl/issues/2493
+- [X] https://github.com/eohne/YFinance.jl/issues/2
+- [X] https://github.com/JuliaLang/julia/issues/47860
+- [ ] https://github.com/NREL-Sienna/SIIP-Tutorial/issues/7 ← maybe
+- [ ] https://github.com/JuliaMath/Bessels.jl/issues/74 ← maybe, unlikely
 - [ ] https://github.com/JuliaGeo/GeoInterface.jl/issues/81
-- [ ] https://github.com/HighDimensionalEconLab/VarianceComponentsHDFE.jl/issues/39
-- [ ] https://github.com/meggart/DiskArrayTools.jl/issues/13
-- [ ] https://github.com/JuliaGaussianProcesses/ApproximateGPs.jl/issues/64
-- [ ] https://github.com/JuliaMath/SpecialFunctions.jl/issues/349
-- [ ] https://github.com/HiroIshida/ARHMM.jl/issues/2
-- [ ] https://github.com/JuliaStats/HypothesisTests.jl/issues/244
-- [ ] https://github.com/gabrevaya/LatentDiffEq.jl/issues/54
-- [ ] https://github.com/JuliaLang/julia/issues/42259
-- [ ] https://github.com/trixi-framework/Trixi.jl/issues/856
-- [ ] https://github.com/1ozturkbe/OCTHaGOn.jl/issues/96
-- [ ] https://github.com/felipenoris/XLSX.jl/issues/179
-- [ ] https://github.com/JuliaData/CategoricalArrays.jl/issues/363
-- [ ] https://github.com/JuliaDataCubes/YAXArrays.jl/issues/182
-- [ ] https://github.com/joaquimg/BilevelJuMP.jl/issues/191
-- [ ] https://github.com/JeffreySarnoff/RollingFunctions.jl/issues/24
-- [ ] https://github.com/JuliaLang/julia/issues/47052
-- [ ] https://github.com/JuliaDataCubes/YAXArrays.jl/issues/181
-- [ ] https://github.com/JuliaLang/julia/issues/47026
-- [ ] https://github.com/Circuitscape/Omniscape.jl/issues/122
-- [ ] https://github.com/FluxML/NNlibCUDA.jl/issues/57
+- [ ] https://github.com/HighDimensionalEconLab/VarianceComponentsHDFE.jl/issues/39 ← maybe
+- [X] https://github.com/meggart/DiskArrayTools.jl/issues/13
+- [X] https://github.com/JuliaGaussianProcesses/ApproximateGPs.jl/issues/64
+- [ ] https://github.com/JuliaMath/SpecialFunctions.jl/issues/349 ← maybe
+- [ ] https://github.com/HiroIshida/ARHMM.jl/issues/2 ← maybe, bad docs
+- [ ] https://github.com/JuliaStats/HypothesisTests.jl/issues/244 ← maybe; could confirm bug
+- [X] https://github.com/gabrevaya/LatentDiffEq.jl/issues/54
+- [X] https://github.com/JuliaLang/julia/issues/42259
+- [ ] https://github.com/trixi-framework/Trixi.jl/issues/856 ← maybe
+- [ ] https://github.com/1ozturkbe/OCTHaGOn.jl/issues/96 ← maybe, unlikely
+- [X] https://github.com/felipenoris/XLSX.jl/issues/179
+- [X] https://github.com/JuliaData/CategoricalArrays.jl/issues/363
+- [X] https://github.com/JuliaDataCubes/YAXArrays.jl/issues/182
+- [X] https://github.com/joaquimg/BilevelJuMP.jl/issues/191
+- [X] https://github.com/JeffreySarnoff/RollingFunctions.jl/issues/24
+- [X] https://github.com/JuliaLang/julia/issues/47052
+- [X] https://github.com/JuliaDataCubes/YAXArrays.jl/issues/181
+- [X] https://github.com/JuliaLang/julia/issues/47026
+- [ ] https://github.com/Circuitscape/Omniscape.jl/issues/122 ← maybe, promising!
+- [ ] https://github.com/FluxML/NNlibCUDA.jl/issues/57 ← maybe, involves some CPU/GPU action—would be interesting to look at
 - [ ] https://github.com/FluxML/Flux.jl/issues/2066
 - [ ] https://github.com/JuliaML/MLUtils.jl/issues/123
 - [ ] https://github.com/TuringLang/DistributionsAD.jl/issues/242
@@ -173,7 +173,7 @@
 - [ ] https://github.com/JuliaStats/StatsBase.jl/issues/723
 - [ ] https://github.com/JuliaArrays/StaticArrays.jl/issues/963
 - [ ] https://github.com/JuliaText/CorpusLoaders.jl/issues/50
-- [ ] https://github.com/JuliaDiff/ForwardDiff.jl/issues/547
+- [ ] https://github.com/JuliaDiff/ForwardDiff.jl/issues/547 ← maybe
 - [ ] https://github.com/KristofferC/NearestNeighbors.jl/issues/126
 - [ ] https://github.com/JuliaDiff/FiniteDifferences.jl/issues/192
 - [ ] https://github.com/JuliaDiff/ChainRulesTestUtils.jl/issues/220
