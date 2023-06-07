@@ -29,7 +29,7 @@
 - [ ] https://github.com/CliMA/TurbulenceConvection.jl/issues/508
 - [ ] https://github.com/CliMA/TurbulenceConvection.jl/issues/603
 - [ ] https://github.com/CliMA/TurbulenceConvection.jl/issues/936
-- [ ] https://github.com/Deltares/Wflow.jl/issues/117
+- [X] https://github.com/Deltares/Wflow.jl/issues/117 <- same as Finch mesh issue (17), data files may contain NaN (`forcing.nc` <https://deltares.github.io/Wflow.jl/stable/user_guide/step2_settings_file/#Input-section>)
 - [ ] https://github.com/EdwardBerman/shopt/issues/3
 - [ ] https://github.com/EnzymeAD/Enzyme.jl/issues/114
 - [ ] https://github.com/EnzymeAD/Enzyme.jl/issues/373
