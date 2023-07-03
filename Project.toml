@@ -2,9 +2,12 @@ authors = ["Taylor Allred <taylor.allred21@gmail.com>", "Ashton Wiersdorf <mail@
 
 [deps]
 ArgParse = "c7e460c6-2fb9-53a9-8c5b-16f535851c63"
+Clapeyron = "7c7805af-46cc-48c9-995b-ed0ed2dc909a"
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+Fatou = "5f923234-c850-556d-bb4f-28324fa1959a"
 Finch = "25dbc9c3-d6a9-4084-a72b-41a6bed6a421"
 FloatTracker = "1722352a-da05-4a89-9ace-0f2f7ef630bb"
+ImageInTerminal = "d8c32880-2388-543b-8c61-d9f865259254"
 IterativeSolvers = "42fd0dbc-a981-5370-80f2-aaf504508153"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 NBodySimulator = "0e6f8da7-a7fc-5c8b-a220-74e902c310f9"
