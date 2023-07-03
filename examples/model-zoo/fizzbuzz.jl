@@ -73,5 +73,5 @@ end
 
 train()
 
-FloatTracker.write_out_logs()
+FloatTracker.ft_flush_logs()
 

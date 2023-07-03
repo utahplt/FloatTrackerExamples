@@ -1,4 +1,4 @@
-using FloatTracker: TrackedFloat16, TrackedFloat32, write_out_logs, exclude_stacktrace, config_logger
+using FloatTracker: TrackedFloat16, TrackedFloat32, ft_flush_logs, exclude_stacktrace, config_logger
 using ShallowWaters, PyPlot
 
 # Dialing the logger high has some inpact too

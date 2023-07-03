@@ -7,7 +7,7 @@ using Metalhead
 using Images
 using DataAugmentation
 using Flux
-using FloatTracker: TrackedFloat64, write_out_logs, set_logger
+using FloatTracker: TrackedFloat64, ft_flush_logs, set_logger
 
 set_logger(filename="metalhead-resnet18", buffersize=1)
 
@@ -33,5 +33,5 @@ labels = readlines(download("https://raw.githubusercontent.com/pytorch/hub/maste
 
 println(Flux.onecold(model(Flux.unsqueeze(tf.(mydata), 4)), labels))
 
-write_out_logs()
+ft_flush_logs()
 

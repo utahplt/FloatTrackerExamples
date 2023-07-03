@@ -7,7 +7,7 @@
 ### If the Finch package has already been added, use this line #########
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 
-using FloatTracker: write_out_logs, config_injector, config_logger, exclude_stacktrace, FunctionRef
+using FloatTracker: ft_flush_logs, config_injector, config_logger, exclude_stacktrace, FunctionRef
 fns = FunctionRef[]
 config_injector(odds=1, n_inject=1, functions=fns)
 config_logger(filename="tf-heat2d", buffersize=5)
@@ -54,4 +54,4 @@ solve(u);
 # display(plot(Finch.grid_data.allnodes[1,:], Finch.grid_data.allnodes[2,:], u.values[:], st = :surface))
 
 finalize_finch() # Finish writing and close any files
-write_out_logs()
+ft_flush_logs()

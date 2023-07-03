@@ -22,4 +22,4 @@ model = VTPR(["carbon monoxide", "carbon dioxide"])
 bubble_pressure(model, TrackedFloat32(218.15), [1e-5, 1 - 1e-5])
 # bubble_pressure(model, 218.15, [1e-5, 1 - 1e-5])
 
-write_out_logs()
+ft_flush_logs()

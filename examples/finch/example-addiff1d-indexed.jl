@@ -9,7 +9,7 @@
 ### If the Finch package has already been added, use this line #########
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 
-using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, config_injector, config_logger, exclude_stacktrace
+using FloatTracker: TrackedFloat64, FunctionRef, ft_flush_logs, config_injector, config_logger, exclude_stacktrace
 fns = []
 #fns = [FunctionRef(:mesh, Symbol("finch_interface.jl"))]
 config_injector(active=false, odds=1, n_inject=1, functions=fns)
@@ -110,4 +110,4 @@ finalizeFinch()
 # end
 # display(plot(ps[1], ps[2], ps[3], ps[4], layout=4))
 
-write_out_logs()
+ft_flush_logs()

@@ -1,5 +1,5 @@
 using Dates
-using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, config_injector, exclude_stacktrace, config_logger, record_injection
+using FloatTracker: TrackedFloat64, FunctionRef, ft_flush_logs, config_injector, exclude_stacktrace, config_logger, record_injection
 
 config_logger(filename="nbody_logs", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
 fns = [FunctionRef(:run_simulation, Symbol("nbody_simulation_result.jl"))]
@@ -50,4 +50,4 @@ println("Running simulation...done")
 # animate(sim_result, "animated_particles.gif")
 # println("Plotting result...done")
 
-write_out_logs()
+ft_flush_logs()

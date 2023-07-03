@@ -1,4 +1,4 @@
-using FloatTracker: TrackedFloat64, write_out_logs, set_logger
+using FloatTracker: TrackedFloat64, ft_flush_logs, set_logger
 using Random
 using Distributions: Uniform
 
@@ -18,5 +18,5 @@ for X in rand(Uniform(0.1, 0.3), nn)
   verhulst(tf(X))
 end
 
-write_out_logs()
+ft_flush_logs()
 

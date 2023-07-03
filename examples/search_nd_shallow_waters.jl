@@ -1,4 +1,4 @@
-using FloatTracker: TrackedFloat16, TrackedFloat32, write_out_logs, exclude_stacktrace, config_logger, write_out_logs
+using FloatTracker: TrackedFloat16, TrackedFloat32, ft_flush_logs, exclude_stacktrace, config_logger, ft_flush_logs
 using ShallowWaters
 
 exclude_stacktrace([:prop])
@@ -16,7 +16,7 @@ for search_id = 0:20
   catch e
     run1_goodp = false
   end
-  write_out_logs()
+  ft_flush_logs()
 
   run2_name = config_logger(filename="ndsh_id$search_id", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
   println("Search $search_id; try 2; run2_name")
@@ -25,7 +25,7 @@ for search_id = 0:20
   catch e
     run2_goodp = false
   end
-  write_out_logs()
+  ft_flush_logs()
 
   run3_name = config_logger(filename="ndsh_id$search_id", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
   println("Search $search_id; try 3; $run3_name")
@@ -34,7 +34,7 @@ for search_id = 0:20
   catch e
     run3_goodp = false
   end
-  write_out_logs()
+  ft_flush_logs()
 
   run4_name = config_logger(filename="ndsh_id$search_id", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
   println("Search $search_id; try 4; $run4_name")
@@ -43,7 +43,7 @@ for search_id = 0:20
   catch e
     run4_goodp = false
   end
-  write_out_logs()
+  ft_flush_logs()
 
   if run1_goodp == run2_goodp == run3_goodp == run4_goodp
     println("All runs had same return status $run1_goodp")

@@ -1,6 +1,10 @@
 using Finch
+using FloatTracker: TrackedFloat64, ft_flush_logs, config_injector, config_logger, exclude_stacktrace
 
-initFinch("FVadvection2d");
+config_logger(filename="adv2d-animation", buffersize=20, cstg=true, cstgArgs=true, cstgLineNum=true)
+exclude_stacktrace([:prop])
+
+initFinch("FVadvection2d", TrackedFloat64);
 
 useLog("FVadvection2dslog", level=3)
 
@@ -34,7 +38,7 @@ xy = Finch.finch_state.fv_info.cellCenters
 using Plots
 
 stepper = Finch.finch_state.time_stepper;
-nsteps = 400; # 400 is stable, 200 is unstable
+nsteps = 200; # 400 is stable, 200 is unstable
 dt = 2.0 / nsteps;
 stepsPerFrame = 4;
 frames = Int(ceil(nsteps/stepsPerFrame));
@@ -49,3 +53,4 @@ end
 gif(anim, "advection.gif", fps = 20)
 
 finalizeFinch()
+ft_flush_logs()

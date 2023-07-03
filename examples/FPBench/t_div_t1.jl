@@ -1,4 +1,4 @@
-using FloatTracker: TrackedFloat64, write_out_logs, set_logger
+using FloatTracker: TrackedFloat64, ft_flush_logs, set_logger
 using Random
 using Distributions: Uniform
 
@@ -18,4 +18,4 @@ for T in range(0, 999)
   t_div_t1(tf(T))
 end
 
-write_out_logs()
+ft_flush_logs()

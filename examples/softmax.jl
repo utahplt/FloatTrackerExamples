@@ -1,4 +1,4 @@
-using FloatTracker: TrackedFloat64, write_out_logs, config_logger
+using FloatTracker: TrackedFloat64, ft_flush_logs, config_logger
 
 config_logger(filename="max", buffersize=1)
 

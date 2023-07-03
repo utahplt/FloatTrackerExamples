@@ -6,7 +6,7 @@
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 
 using Dates
-using FloatTracker: TrackedFloat64, write_out_logs, config_injector, config_logger, exclude_stacktrace, record_injection, FunctionRef
+using FloatTracker: TrackedFloat64, ft_flush_logs, config_injector, config_logger, exclude_stacktrace, record_injection, FunctionRef
 
 config_logger(filename="adv2d", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=true)
 fns::Array{FunctionRef} = [] ##[FunctionRef(:run_simulation, Symbol("nbody_simulation_result.jl"))]
@@ -92,4 +92,4 @@ finalizeFinch()
 ## pyplot();
 ## display(plot(xy[1,:], xy[2,:], u.values[:], st=:surface))
 
-write_out_logs()
+ft_flush_logs()

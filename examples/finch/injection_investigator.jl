@@ -6,7 +6,7 @@ using Dates
 
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 using FloatTracker:
-  TrackedFloat64, exclude_stacktrace, config_injector, config_logger, write_out_logs, record_injection, replay_injection
+  TrackedFloat64, exclude_stacktrace, config_injector, config_logger, ft_flush_logs, record_injection, replay_injection
 
 now_str = Dates.format(now(), "yyyymmddHHMMss")
 default_recording_file = "rand-adv2d-recording_$now_str"
@@ -101,4 +101,4 @@ println("Solving...done")
 
 finalizeFinch()
 
-write_out_logs()
+ft_flush_logs()

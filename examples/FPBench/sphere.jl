@@ -1,4 +1,4 @@
-using FloatTracker: TrackedFloat64, write_out_logs, config_logger
+using FloatTracker: TrackedFloat64, ft_flush_logs, config_logger
 using Random
 using Distributions: Uniform
 
@@ -25,5 +25,5 @@ for R in rand(Uniform(0, 10), nn)
   end
 end
 
-write_out_logs()
+ft_flush_logs()
 

@@ -58,4 +58,4 @@ end
   @test g ≈ ghat rtol=1e-5 atol=1e-5
 end
 
-write_out_logs()
+ft_flush_logs()

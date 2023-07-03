@@ -5,7 +5,7 @@
 ### If the Finch package has already been added, use this line #########
 using Finch # Note: to add the package, first do: ]add "https://github.com/paralab/Finch.git"
 
-using FloatTracker: TrackedFloat64, write_out_logs, config_injector, config_logger, exclude_stacktrace
+using FloatTracker: TrackedFloat64, ft_flush_logs, config_injector, config_logger, exclude_stacktrace
 fns = []
 config_injector(active=true, odds=1, n_inject=1, functions=fns)
 config_logger("tf-unstructured", 5)
@@ -57,4 +57,4 @@ for i=1:size(Finch.grid_data.allnodes,2)
     maxerr = max(err,maxerr);
 end
 println("max error = "*string(maxerr));
-write_out_logs()
+ft_flush_logs()

@@ -344,4 +344,4 @@ end
   @test_throws DomainError(-1, "Margin must be non-negative") Flux.siamese_contrastive_loss(ŷ, y, margin = -1)
 end
 
-FloatTracker.write_out_logs()
+FloatTracker.ft_flush_logs()

@@ -1,4 +1,4 @@
-using FloatTracker: TrackedFloat64, write_out_logs, config_logger
+using FloatTracker: TrackedFloat64, ft_flush_logs, config_logger
 using Random
 using Distributions: Uniform
 
@@ -24,5 +24,5 @@ for v in rand(Uniform(0.1,0.5), nn)
   carbonGas(tf(v))
 end
 
-write_out_logs()
+ft_flush_logs()
 

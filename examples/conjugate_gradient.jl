@@ -1,4 +1,4 @@
-using FloatTracker: TrackedFloat64, FunctionRef, write_out_logs, config_injector, config_logger, exclude_stacktrace
+using FloatTracker: TrackedFloat64, FunctionRef, ft_flush_logs, config_injector, config_logger, exclude_stacktrace
 using LinearAlgebra
 using SparseArrays
 using IterativeSolvers
@@ -27,4 +27,4 @@ B = [TrackedFloat64(1e-300), TrackedFloat64(3e-300), TrackedFloat64(1e-300)]
 # B = [1.0,3.0,2.0]
 
 println(IterativeSolvers.cg(A, B))
-write_out_logs()
+ft_flush_logs()

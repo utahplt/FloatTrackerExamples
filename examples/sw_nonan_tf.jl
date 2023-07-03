@@ -1,4 +1,4 @@
-using FloatTracker: TrackedFloat16, TrackedFloat32, write_out_logs, exclude_stacktrace, config_logger
+using FloatTracker: TrackedFloat16, TrackedFloat32, ft_flush_logs, exclude_stacktrace, config_logger
 using ShallowWaters, PyPlot
 
 config_logger(filename="nonan_tf", buffersize=20, cstg=true, cstgArgs=false, cstgLineNum=false)
@@ -12,4 +12,4 @@ speed = sqrt.(Ix(P.u.^2)[:,2:end-1] + Iy(P.v.^2)[2:end-1,:])
 pcolormesh(speed')
 savefig("speed_nonan_tf.png")
 
-write_out_logs()
+ft_flush_logs()

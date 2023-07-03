@@ -1,4 +1,4 @@
-using FloatTracker: TrackedFloat64, write_out_logs, config_logger
+using FloatTracker: TrackedFloat64, ft_flush_logs, config_logger
 using Random
 using Distributions: Uniform
 
@@ -28,5 +28,5 @@ for x in rand(Uniform(-2, 2), nn)
   cubicSpline(tf(x))
 end
 
-write_out_logs()
+ft_flush_logs()
 
