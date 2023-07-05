@@ -1,8 +1,8 @@
-using FloatTracker: TrackedFloat16, ft_flush_logs, config_logger
+using FloatTracker
 
 config_logger(filename="max", buffersize=1)
 
-function maximum(lst)
+@noinline function maximum(lst)
   max_seen = 0.0
   for x in lst
     if ! (x <= max_seen)
