@@ -16,13 +16,12 @@ println("Configuring massive bodies...")
 
 body1 = MassBody(SVector(-1.0, 0.0, 0.0), SVector(c1, c2, 0.0), 1.5)
 body2 = MassBody(SVector(1.0, 0.0, 0.0), SVector(c1, c2, 0.0), 1.5)
-body3 = MassBody(SVector(0.0, 0.0, 0.0), SVector(-2 * c1, -2 * c2, 0.0), 1.5)
+body3 = MassBody(SVector(-0.1, -0.1, 0.0), SVector(-2 * c1, -2 * c2, 0.0), 1.5)
 
 G = 6.673e-11
 system = GravitationalSystem([body1, body2, body3], G)
 
-# tspan = (0.0, 3000000.0)
-tspan = (0.0, 500000.0)
+tspan = (0.0, 1500000.0)
 
 println("Setting up simulation...")
 system = GravitationalSystem([body1, body2, body3], G)
@@ -34,5 +33,5 @@ println("Running simulation...done")
 
 println("Plotting result...")
 using Plots
-animate(sim_result, "pretty_particles.gif")
+animate(sim_result, "pretty_particles.gif", fps=10)
 println("Plotting result...done")

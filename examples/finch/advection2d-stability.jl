@@ -1,10 +1,10 @@
 using Finch
-using FloatTracker: TrackedFloat64, ft_flush_logs, config_injector, config_logger, exclude_stacktrace
+using FloatTracker
 
 config_logger(filename="adv2d-animation", buffersize=20, cstg=true, cstgArgs=true, cstgLineNum=true)
 exclude_stacktrace([:prop])
 
-initFinch("FVadvection2d", TrackedFloat64);
+initFinch("FVadvection2d", TrackedFloat32);
 
 useLog("FVadvection2dslog", level=3)
 
