@@ -10,7 +10,7 @@
 - [X] https://github.com/Circuitscape/Omniscape.jl/issues/122 ← maybe, promising! move to https://github.com/utahplt/FloatTrackerExamples/issues/12
 - [ ] https://github.com/Circuitscape/Omniscape.jl/issues/127 ← maybe, less promising
 - [ ] https://github.com/ClapeyronThermo/Clapeyron.jl/issues/173 ← maybe, promising
-- [ ] https://github.com/CliMA/ClimaAtmos.jl/issues/1282
+- [X] https://github.com/CliMA/ClimaAtmos.jl/issues/1282
 - [ ] https://github.com/CliMA/ClimaAtmos.jl/issues/679
 - [ ] https://github.com/CliMA/ClimateMachine.jl/issues/2037
 - [ ] https://github.com/CliMA/ClimateMachine.jl/issues/2043
@@ -21,14 +21,14 @@
 - [ ] https://github.com/CliMA/Oceananigans.jl/issues/2508
 - [ ] https://github.com/CliMA/Oceananigans.jl/issues/2780
 - [ ] https://github.com/CliMA/Oceananigans.jl/issues/2985
-- [ ] https://github.com/CliMA/Oceananigans.jl/issues/3061
-- [ ] https://github.com/CliMA/SurfaceFluxes.jl/issues/62
-- [ ] https://github.com/CliMA/SurfaceFluxes.jl/issues/93
-- [ ] https://github.com/CliMA/TurbulenceConvection.jl/issues/1145
-- [ ] https://github.com/CliMA/TurbulenceConvection.jl/issues/356
-- [ ] https://github.com/CliMA/TurbulenceConvection.jl/issues/508
-- [ ] https://github.com/CliMA/TurbulenceConvection.jl/issues/603
-- [ ] https://github.com/CliMA/TurbulenceConvection.jl/issues/936
+- [X] https://github.com/CliMA/Oceananigans.jl/issues/3061
+- [ ] https://github.com/CliMA/SurfaceFluxes.jl/issues/62 ← maybe
+- [ ] https://github.com/CliMA/SurfaceFluxes.jl/issues/93 ← maybe
+- [X] https://github.com/CliMA/TurbulenceConvection.jl/issues/1145
+- [ ] https://github.com/CliMA/TurbulenceConvection.jl/issues/356 ← maybe
+- [X] https://github.com/CliMA/TurbulenceConvection.jl/issues/508
+- [X] https://github.com/CliMA/TurbulenceConvection.jl/issues/603
+- [ ] https://github.com/CliMA/TurbulenceConvection.jl/issues/936 ← maybe
 - [X] https://github.com/Deltares/Wflow.jl/issues/117 <- same as Finch mesh issue (17), data files may contain NaN (`forcing.nc` <https://deltares.github.io/Wflow.jl/stable/user_guide/step2_settings_file/#Input-section>)
 - [ ] https://github.com/EdwardBerman/shopt/issues/3
 - [ ] https://github.com/EnzymeAD/Enzyme.jl/issues/114
