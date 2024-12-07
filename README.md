@@ -1,6 +1,6 @@
 # FloatTrackerExamples
 
-Examples for the [FloatTracker.jl](https://github.com/utahplt/FloatTracker.jl) repository.
+Examples for the [TrackedFloats.jl](https://github.com/utahplt/TrackedFloats.jl) repository (formerly `FloatTracker.jl`).
 
 # Synopsis
 
